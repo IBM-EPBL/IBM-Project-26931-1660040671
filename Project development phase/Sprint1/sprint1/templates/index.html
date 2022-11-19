@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="..\static\css\indexstyle.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+                <div class ="logo">
+                    <img src="..\static\images\img.png">
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="login">Login</a></li>
+                        <li><a href="register">Register</a></li>
+                        <li><a href="prediction">Prediction</a></li>
+                    </ul>
+                </div>
+        </nav>
+
+        <div class="information">
+            <div class="overlay"></div>
+            <img src="..\static\images\myproject.jpg" class="eye">
+            <div id="circle">
+                <div class="stages one">
+                    <img src="..\static\images\text-1.png">
+                    <div>
+                        <h1>NPDR</h1>
+                        <p>Mild Swelling in Retinal!</p>
+                    </div>
+                </div>
+                <div class="stages two">
+                    <img src="..\static\images\text-2.png">
+                    <div>
+                        <h1>Moderate NPDR</h1>
+                        <p>NPDR plus small bleeds in Retinal!</p>
+                    </div>
+                </div>
+                <div class="stages three">
+                    <img src="..\static\images\text-3.png">
+                    <div>
+                        <h1>Severe NPDR</h1>
+                        <p>Moderate NPDR plus further damage to<br>
+                            blood vessels in Retinal!</p>
+                    </div>
+                </div>
+                <div class="stages four">
+                    <img src="..\static\images\text-4.png">
+                    <div>
+                        <h1>PDR</h1>
+                        <p>Severe NPDR plus new Vessel<br>
+                            formation in Retinal!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="coltrols">
+            <img src="..\static\images\arrow.png" id="upBtn">
+            <h3>Different Stages of DR</h3>
+            <img src="..\static\images\arrow.png" id="downBtn">
+        </div>
+
+    </div>
+    <script>
+        var circle = document.getElementById("circle");
+        var upBtn = document.getElementById("upBtn");
+        var downBtn = document.getElementById("downBtn");
+
+        var rotateValue = circle.style.transform;
+        var rotateSum;
+
+        upBtn.onclick = function()
+        {
+            rotateSum = rotateValue + "rotate(-90deg)";
+            circle.style.transform = rotateSum;
+            rotateValue = rotateSum;
+        }
+         downBtn.onclick = function()
+        {
+            rotateSum = rotateValue + "rotate(90deg)";
+            circle.style.transform = rotateSum;
+            rotateValue = rotateSum;
+        }
+    </script>
+
+</body>
+</html>

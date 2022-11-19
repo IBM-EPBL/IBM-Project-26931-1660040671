@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="..\static\css\RLStyle.css" rel="stylesheet">
+</head>
+<body><div class="hero">
+        <nav>
+                <div class ="logo">
+                    <img src="..\static\images\img.png">
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="login">Login</a></li>
+                    </ul>
+                </div>
+        </nav>
+
+
+    <div class="information">
+            <div class="overlay"></div>
+            <img src="..\static\images\myproject.jpg" class="eye">
+       </div>
+
+
+
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Login</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        </div>
+        <div class="social-icons">
+          <img src="..\static\images\fb.png">
+          <img src="..\static\images\gp.png">
+          <img src="..\static\images\tw.png">
+      </div>
+        <form  action="afterlogin" method="post" id="Login" class="input-group">
+            <input type="email" class="input-field" name="_id" placeholder="Enter Email ID" required>
+            <input type="password" class="input-field" name="psw" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button type="submit" class="submit-btn">Login</button>
+            {{pred}}
+        </form>
+        <form action="afterreg" method="post" id="Register" class="input-group">
+            <input type="text" class="input-field" name="name" placeholder="User Name " required>
+            <input type="email" class="input-field" name="_id" placeholder="Enter your Email" required>
+            <input type="password" class="input-field" name="psw" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>I agree to the terms and conditions</span>
+            <button type="submit" class="submit-btn">Register</button>
+            {{pred}}
+        </form>
+    </div>
+  </div>
+
+    <script>
+        var x = document.getElementById("Login");
+        var y = document.getElementById("Register");
+        var z = document.getElementById("btn");
+
+        function register(){
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+            }
+        function login(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+            }
+    </script>
+</body>
+</html>
