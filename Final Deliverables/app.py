@@ -9,8 +9,8 @@ from cloudant.client import Cloudant
 model = load_model(r"Updated-xception-diabetic-retinopathy.h5")
 app = Flask(__name__)
 # Authenticate using an IAM API key
-client = Cloudant.iam('d3ffc21a-c9d1-4276-a7c3-d7a48a949e1f-bluemix',
-                        'oS6rF9Lb8-d8IyJW4VEdHx5kiIN9ehQnNoj8ygKXFjzu', connect=True)
+client = Cloudant.iam('6d33e9ce-154a-46eb-bf72-b97eb8ee1596-bluemix',
+                        'wbLb1HU7TZxCM2OBQSYS74NIk8Fbh_s8CN5fnk5-NxOw', connect=True)
 # Create a database using an initialized client
 my_database = client.create_database('my_db')
 if my_database.exists():
@@ -24,9 +24,9 @@ def index():
 def home():
     return render_template("index.html")
 
-'''@ app.route('/register')
+@ app.route('/register')
 def register():
-    return render_template("register.html")'''
+    return render_template("register.html")
 
 # registration page
 @ app.route('/register',methods=["GET","POST"])
@@ -111,5 +111,4 @@ def res():
         return render_template('prediction.html', prediction=result)
 
 if __name__ == "__main__":
-    app.debug = True
-    app.run()
+    app.run(debug = True)
